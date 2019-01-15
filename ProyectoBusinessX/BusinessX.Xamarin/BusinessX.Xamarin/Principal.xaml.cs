@@ -13,5 +13,10 @@ namespace BusinessX.Xamarin
         {
             InitializeComponent();
         }
+
+        private void MenuItem1_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage.Navigation.PushAsync(new CUD());
+        }
     }
 }

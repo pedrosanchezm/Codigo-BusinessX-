@@ -53,7 +53,7 @@ namespace BusinessX.ViewModel
                     var Proxy = new ProxyService.Proxy();
                     nuevoLibro = Proxy.CrearLibro(nuevoLibro);
                     IDL = nuevoLibro.IDL;
-                    if (IDL!=0)
+                    if (IDL != 0)
                     {
                         //Application.Current.MainPage.DisplayAlert("Mensaje", "Creado Correctamente", "Ok");
                     }
@@ -93,12 +93,11 @@ namespace BusinessX.ViewModel
                         Editorial = "";
                         ISBN = "";
                         IDGeneroL = 0;
-                        
-                        //Application.Current.MainPage.DisplayAlert("Mensaje", "Eliminado Correctamente", "Ok");
-                        
-                    }
 
-                });
+                        //Application.Current.MainPage.DisplayAlert("Mensaje", "Eliminado Correctamente", "Ok");
+
+                    }
+                });          
         }
         #region Properties
         private List<Entities.Libro> Libros_BF;

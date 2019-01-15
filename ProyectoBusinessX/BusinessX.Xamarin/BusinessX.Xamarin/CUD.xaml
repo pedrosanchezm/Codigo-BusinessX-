@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:BusinessX.ViewModel;assembly=BusinessX.ViewModel"
+             x:Class="BusinessX.Xamarin.CUD">
+    <ContentPage.BindingContext>
+        <vm:Principal/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+            <Label>Nuevo Libro</Label>
+            <StackLayout Orientation="Horizontal">
+                <Label>ID:</Label>
+                <Entry Text="{Binding IDL}" 
+                       WidthRequest="100" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label>Nombre:</Label>
+                <Entry Text="{Binding NombreL}" 
+                       WidthRequest="100" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label>Autor:</Label>
+                <Entry Text="{Binding AutorL}" 
+                       WidthRequest="100" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label>Editorial:</Label>
+                <Entry Text="{Binding Editorial}" 
+                       WidthRequest="100" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label>ISBL:</Label>
+                <Entry Text="{Binding ISBN}" 
+                       WidthRequest="100" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label>Precio:</Label>
+                <Entry Text="{Binding PrecioL}" 
+                       WidthRequest="100" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label>Ruta IMG:</Label>
+                <Entry Text="{Binding RutaImgL}" 
+                       WidthRequest="100" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label>ID de Genero:</Label>
+                <Entry Text="{Binding IDGeneroL}" 
+                       WidthRequest="100" />
+            </StackLayout>
+            <Button Text="Crear Producto" Command="{Binding CrearLibroCommand}" />
+            <Button Text="Actualizar Producto" Command="{Binding ActualizarLibroCommand}" />
+            <Button Text="Eliminar Producto" Command="{Binding EliminarLibroCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
