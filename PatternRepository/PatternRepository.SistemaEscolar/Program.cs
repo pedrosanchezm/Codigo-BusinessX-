@@ -30,22 +30,26 @@ namespace PatternRepository.SistemaEscolar
 
             void IngresarDatos()
             {
-                var ObjAlumno = new PatternRepository.Entities.Libro();
+                var ObjLibro = new Entities.Libro();
                 int resultado = 0;
 
                 while (resultado!=1)
                 {
                     Console.WriteLine("Ingrese un Registro");
                     Console.WriteLine("Ingrese el Nombre: ");
-                    ObjAlumno.NombreAlum = Console.ReadLine();
-                    Console.WriteLine("Ingrese el Apellido: ");
-                    ObjAlumno.ApellidoAlum = Console.ReadLine();
-                    Console.WriteLine("Ingrese la Direccion: ");
-                    ObjAlumno.DireccionAlum = Console.ReadLine();
-                    Console.WriteLine("Ingrese el Telefono: ");
-                    ObjAlumno.TelefonoAlum = Console.ReadLine();
+                    ObjLibro.NombreL = Console.ReadLine();
+                    Console.WriteLine("Ingrese el Autor: ");
+                    ObjLibro.AutorL = Console.ReadLine();
+                    Console.WriteLine("Ingrese la Editorial: ");
+                    ObjLibro.Editorial = Console.ReadLine();
+                    Console.WriteLine("Ingrese ISBN: ");
+                    ObjLibro.ISBN = Console.ReadLine();
+                    Console.WriteLine("Ingrese Precio: ");
+                    ObjLibro.PrecioL = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Ingrese Genero: ");
+                    ObjLibro.IDGeneroL = Convert.ToInt32(Console.ReadLine());
 
-                    var InstarAlum = new AlumnosManager().InsertAlumnos(ObjAlumno);
+                    var InstarAlum = new LibrosManager().InsertLibros(ObjLibro);
                     Console.WriteLine("Ingrese 1 para salir.");
                     resultado = Convert.ToInt32(Console.ReadLine());
                 }
@@ -54,20 +58,22 @@ namespace PatternRepository.SistemaEscolar
 
             void MostrarDatos()
             {
-                var Alumnos = new AlumnosManager().GetAlumnos();
+                var Libros = new LibrosManager().GetLibros();
                 int resultado = 0;
 
                 while (resultado != 1)
                 {
                     Console.WriteLine("Registros Actuales");
-                    foreach (var alumno in Alumnos)
+                    foreach (var libro in Libros)
                     {
 
-                        Console.WriteLine($"Id: {alumno.IdAlum}, " +
-                            $"Nombre: {alumno.NombreAlum}, " +
-                            $"Apellido: {alumno.ApellidoAlum}, " +
-                            $"Direccion: {alumno.DireccionAlum}, " +
-                            $"Telefono: {alumno.TelefonoAlum}. ");
+                        Console.WriteLine($"Id: {libro.IDL}, " +
+                            $"Nombre: {libro.NombreL}, " +
+                            $"Autor: {libro.AutorL}, " +
+                            $"Editorial: {libro.Editorial}, " +
+                            $"ISBN: {libro.ISBN}, " +
+                            $"Precio: {libro.PrecioL}, " +
+                            $"Genero: {libro.IDGeneroL}. ");
                     }
                     Console.WriteLine("Ingrese 1 para salir.");
                     resultado = Convert.ToInt32(Console.ReadLine());
