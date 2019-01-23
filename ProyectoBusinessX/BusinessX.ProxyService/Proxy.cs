@@ -12,7 +12,7 @@ namespace BusinessX.ProxyService
 {
     public class Proxy
     {
-        string BaseAddress = "http://192.168.60.193:62574/";
+        string BaseAddress = "http://192.168.60.92:62574/";
 
         #region Peticiones POST AND GET
         // Peticiones POST
