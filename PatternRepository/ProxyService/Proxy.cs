@@ -1,14 +1,13 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using PatternRepository.Entities;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
-using BusinessX.Entities;
-using BusinessX.SLC;
-using Newtonsoft.Json;
 
-namespace BusinessX.ProxyService
+namespace ProxyService
 {
     public class Proxy
     {
