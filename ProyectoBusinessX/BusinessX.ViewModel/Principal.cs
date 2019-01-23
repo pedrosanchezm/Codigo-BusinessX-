@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace BusinessX.ViewModel
 {
@@ -19,6 +20,12 @@ namespace BusinessX.ViewModel
                 {
                     var Proxy = new ProxyService.Proxy();
                     Libros = Proxy.FiltrarLibroPorIDGenero(IDGeneroL);
+                    int CountProduct = 0;
+                    foreach (var item in Libros)
+                    {
+                        CountProduct += 1;
+                    }
+                    Application.Current.MainPage.DisplayAlert("Mensaje",$"Se encontraron {CountProduct} resultados","Ok");
                 });
             BuscarLibroPorIDCommand = new CommandDelegate
                 ((o) => { return true; },
@@ -33,7 +40,10 @@ namespace BusinessX.ViewModel
                         AutorL = p.AutorL;
                         Editorial = p.Editorial;
                         ISBN = p.ISBN;
+                        PrecioL = p.PrecioL;
+                        RutaImgL = p.RutaImgL;
                         IDGeneroL = p.IDGeneroL;
+                       // Application.Current.MainPage.Navigation.PushAsync(new );
                     }
                 });
             CrearLibroCommand = new CommandDelegate
@@ -47,15 +57,16 @@ namespace BusinessX.ViewModel
                         AutorL = AutorL,
                         Editorial = Editorial,
                         ISBN = ISBN,
+                        PrecioL = PrecioL,
+                        RutaImgL = RutaImgL,
                         IDGeneroL = IDGeneroL
-
                     };
                     var Proxy = new ProxyService.Proxy();
                     nuevoLibro = Proxy.CrearLibro(nuevoLibro);
                     IDL = nuevoLibro.IDL;
                     if (IDL != 0)
                     {
-                        //Application.Current.MainPage.DisplayAlert("Mensaje", "Creado Correctamente", "Ok");
+                        Application.Current.MainPage.DisplayAlert("Mensaje", "Creado Correctamente", "Ok");
                     }
                 }
             );
@@ -70,13 +81,15 @@ namespace BusinessX.ViewModel
                         AutorL = AutorL,
                         Editorial = Editorial,
                         ISBN = ISBN,
+                        PrecioL = PrecioL,
+                        RutaImgL = RutaImgL,
                         IDGeneroL = IDGeneroL
                     };
                     var Proxy = new ProxyService.Proxy();
                     var Respuesta = Proxy.ActualizarLibro(IDL, nuevoLibro);
                     if (Respuesta)
                     {
-                        //Application.Current.MainPage.DisplayAlert("Mensaje", "Actualizado Correctamente", "Ok");
+                        Application.Current.MainPage.DisplayAlert("Mensaje", "Actualizado Correctamente", "Ok");
                     }
                 });
             EliminarLibroCommand = new CommandDelegate
@@ -92,9 +105,11 @@ namespace BusinessX.ViewModel
                         AutorL = "";
                         Editorial = "";
                         ISBN = "";
+                        PrecioL = 0;
+                        RutaImgL = "";
                         IDGeneroL = 0;
 
-                        //Application.Current.MainPage.DisplayAlert("Mensaje", "Eliminado Correctamente", "Ok");
+                        Application.Current.MainPage.DisplayAlert("Mensaje", "Eliminado Correctamente", "Ok");
 
                     }
                 });          

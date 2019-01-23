@@ -11,7 +11,8 @@ namespace BusinessX.WebApi.Models
         private List<Libro> Libros = new List<Libro>();
         private List<Genero> Generos = new List<Genero>();
 
-        private static int NextID;
+        //private static int NextID;
+        private int Lastid { get; set; }
 
         public RepositoryMemoryData()
         {
@@ -30,7 +31,8 @@ namespace BusinessX.WebApi.Models
                 PrecioL =45,
                 RutaImgL = "https://marketplace.canva.com/MACXC0twKgo/1/0/thumbnail_large/canva-green-and-pink-science-fiction-book-cover-MACXC0twKgo.jpg"
             });
-            Libros.Add(new Libro { IDL = 2,
+            Libros.Add(new Libro {
+                IDL = 2,
                 NombreL = "Libro 2",
                 AutorL = "Autor 2",
                 Editorial = "Editorial 2",
@@ -39,7 +41,8 @@ namespace BusinessX.WebApi.Models
                 PrecioL = 50,
                 RutaImgL = "https://marketplace.canva.com/MACXC0twKgo/1/0/thumbnail_large/canva-green-and-pink-science-fiction-book-cover-MACXC0twKgo.jpg"
             });
-            Libros.Add(new Libro { IDL = 2,
+            Libros.Add(new Libro {
+                IDL = 3,
                 NombreL = "Libro 3",
                 AutorL = "Autor 3",
                 Editorial = "Editorial 3",
@@ -66,7 +69,7 @@ namespace BusinessX.WebApi.Models
             {
                 throw new ArgumentException("Libro");
             }
-            nuevoLibro.IDL = ++NextID;
+            nuevoLibro.IDL = LastID();
             Libros.Add(nuevoLibro);
             return nuevoLibro;
         }
@@ -97,6 +100,16 @@ namespace BusinessX.WebApi.Models
             Libros.RemoveAt(index);
             Libros.Add(LibroToUpdate);
             return true;
+        }
+
+        
+        public int LastID()
+        {
+            foreach (var item in Libros)
+            {
+                Lastid = item.IDL;
+            }
+            return Lastid + 1 ;
         }
     }
 }

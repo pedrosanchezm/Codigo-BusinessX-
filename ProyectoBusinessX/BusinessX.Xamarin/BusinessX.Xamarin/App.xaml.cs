@@ -11,7 +11,7 @@ namespace BusinessX.Xamarin
         {
             InitializeComponent();
 
-            MainPage = new Principal();
+            MainPage = new NavigationPage(new Principal());
         }
 
         protected override void OnStart()
