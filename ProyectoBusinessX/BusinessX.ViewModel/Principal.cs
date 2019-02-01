@@ -43,7 +43,7 @@ namespace BusinessX.ViewModel
                         PrecioL = p.PrecioL;
                         RutaImgL = p.RutaImgL;
                         IDGeneroL = p.IDGeneroL;
-                       // Application.Current.MainPage.Navigation.PushAsync(new );
+                        //Application.Current.MainPage.Navigation.PushAsync();
                     }
                 });
             CrearLibroCommand = new CommandDelegate

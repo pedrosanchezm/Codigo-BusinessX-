@@ -26,12 +26,13 @@
                     <Button Text="Buscar" 
                         Margin="10" 
                         Command="{Binding BuscarLibroCommand}" />
-                    <Button Text="Ver Detalle" 
+                    <Button x:Name="BtnVerDetalle" Text="Ver Detalle" 
                         Margin="10" 
                         WidthRequest="100" 
-                        Command="{Binding BuscarLibroPorIDCommand}" />
+                            Clicked="BtnVerDetalle_Clicked" 
+                         />
                 </StackLayout>
-                <ListView ItemsSource="{Binding Path=Libros}" SelectedItem="{Binding LibroSelected}">
+                <ListView x:Name="ListLibros" ItemsSource="{Binding Path=Libros}" SelectedItem="{Binding LibroSelected}" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

@@ -5,9 +5,39 @@
              Title="Detalle del Libro">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label>Detalle del Libro</Label>
+            <StackLayout Orientation="Horizontal">
+                <Label>ID:</Label>
+                <Label Text="" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label>Nombre:</Label>
+                <Label Text="" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label>Autor:</Label>
+                <Label Text="" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label>Editorial:</Label>
+                <Label Text="" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label>ISBN:</Label>
+                <Label Text="" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label>Precio:</Label>
+                <Label Text="" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label>Foto:</Label>
+                <Image Source="" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label>ID Genero:</Label>
+                <Label Text="" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

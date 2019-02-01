@@ -16,5 +16,9 @@ namespace BusinessX.Xamarin
 		{
 			InitializeComponent ();
 		}
-	}
+        public MostrarDetalle(string ID)
+        {
+            InitializeComponent();
+        }
+    }
 }
